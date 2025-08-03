@@ -5,6 +5,7 @@ import type {
   MenuCheckboxItemProps,
   MenuItemIconProps,
   MenuItemProps,
+  MenuTriggerProps,
   MenuSubTriggerProps,
   MenuGroupProps,
   MenuSubContentProps,
@@ -14,7 +15,9 @@ import { create } from '../menu/display-names'
 
 const Root = create(DropdownMenu.Root, 'Root')
 
-const Trigger = create(DropdownMenu.Trigger, 'Trigger')
+const Trigger = create<MenuTriggerProps>((props) => (
+  <DropdownMenu.Trigger {...props} />
+), 'Trigger')
 
 const Content = create<MenuContentProps>((props) => {
   return (

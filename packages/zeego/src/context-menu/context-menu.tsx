@@ -8,6 +8,7 @@ import type {
   ContextMenuSubContentProps,
   ContextMenuAuxliliaryProps,
   MenuItemProps,
+  MenuTriggerProps,
   MenuSubProps,
   MenuSubTriggerProps,
   ContextMenuPreviewProps,
@@ -16,7 +17,10 @@ import { create } from '../menu/display-names'
 
 const Root = create(ContextMenu.Root, 'Root')
 
-const Trigger = create(ContextMenu.Trigger, 'Trigger')
+const Trigger = create<MenuTriggerProps>(
+  (props) => <ContextMenu.Trigger {...props} />,
+  'Trigger'
+)
 
 const Content = create<ContextMenuContentProps>(
   (props) => (
